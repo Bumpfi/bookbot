@@ -31,3 +31,19 @@ def count_letters(book_text):
             letters_dict[char] = 1
 
     return letters_dict
+
+
+# Helper Function for sorting
+def get_num_key(dict_item):
+    return dict_item["num"]
+
+
+def sort_char_by_count(char_dict):
+    char_list = []
+
+    for char, count in char_dict.items():
+        char_list.append({"char": char, "num": count})
+
+    char_list.sort(key=get_num_key, reverse=True)
+
+    return char_list
