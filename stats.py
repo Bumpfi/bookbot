@@ -18,17 +18,32 @@ def count_words(filepath):
     return words_count
 
 
+# def count_letters(book_text):
+#     letters = list(book_text)
+#     letters_dict = {}
+
+#     for letter in letters:
+#         char = letter.lower()
+
+#         if char in letters_dict:
+#             letters_dict[char] += 1
+#         else:
+#             letters_dict[char] = 1
+
+#     return letters_dict
+
+
 def count_letters(book_text):
     letters = list(book_text)
     letters_dict = {}
 
     for letter in letters:
         char = letter.lower()
-
-        if char in letters_dict:
-            letters_dict[char] += 1
-        else:
-            letters_dict[char] = 1
+        if char.isalpha():  # Only count alphabetic characters
+            if char in letters_dict:
+                letters_dict[char] += 1
+            else:
+                letters_dict[char] = 1
 
     return letters_dict
 
